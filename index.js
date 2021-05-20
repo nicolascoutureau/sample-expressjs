@@ -1,15 +1,17 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
-const puppeteer = require('puppeteer-extra')
+//const puppeteer = require('puppeteer-extra')
+const puppeteer = require('puppeteer');
+
 
 // Add stealth plugin and use defaults (all tricks to hide puppeteer usage)
-const StealthPlugin = require('puppeteer-extra-plugin-stealth')
-puppeteer.use(StealthPlugin())
+//const StealthPlugin = require('puppeteer-extra-plugin-stealth')
+//puppeteer.use(StealthPlugin())
 
 // Add adblocker plugin to block all ads and trackers (saves bandwidth)
-const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker')
-puppeteer.use(AdblockerPlugin({ blockTrackers: true }))
+//const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker')
+//puppeteer.use(AdblockerPlugin({ blockTrackers: true }))
 
 let browsers = [];
 app.get('/', async (req, res) => {
